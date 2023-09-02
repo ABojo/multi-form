@@ -1,0 +1,38 @@
+:root {
+  --color-marine-blue: hsl(213, 96%, 18%);
+  --color-purple-blue: hsl(243, 100%, 62%);
+  --color-pastel-blue: hsl(228, 100%, 84%);
+  --color-light-blue: hsl(206, 94%, 87%);
+  --color-red: hsl(354, 84%, 57%);
+  --color-cool-gray: hsl(231, 11%, 63%);
+  --color-light-gray: hsl(229, 24%, 87%);
+  --color-magnolia: hsl(217, 100%, 97%);
+  --color-alabaster: hsl(231, 100%, 99%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --fs-1: 0.75rem;
+  --fs-2: 0.86rem;
+  --fs-3: 1rem;
+  --fs-4: 2rem;
+
+  --fw-1: 400;
+  --fw-2: 500;
+  --fw-3: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
