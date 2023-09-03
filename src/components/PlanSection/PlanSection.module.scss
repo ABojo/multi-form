@@ -1,0 +1,120 @@
+.plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2.75rem;
+}
+
+.card {
+  width: 100%;
+
+  &--active {
+  }
+
+  &__label {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  &__radio:checked + &__label {
+    border: 1px solid var(--color-purple-blue);
+    background-color: hsla(243, 100%, 62%, 0.05);
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__img {
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    font-size: var(--fs-3);
+    color: var(--color-marine-blue);
+    font-weight: var(--fw-3);
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    color: var(--color-cool-gray);
+    font-size: var(--fs-2);
+  }
+
+  &__promotion {
+    display: block;
+    font-size: var(--fs-1);
+    margin-top: 0.5rem;
+    color: var(--color-marine-blue);
+  }
+}
+
+.duration {
+  background-color: var(--color-alabaster);
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: var(--fs-2);
+  font-weight: var(--fw-2);
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+  gap: 1.5rem;
+
+  &__name {
+    &--monthly {
+      color: var(--color-marine-blue);
+    }
+
+    &--yearly {
+      color: var(--color-cool-gray);
+    }
+  }
+
+  &__label {
+    height: 100%;
+    width: 2.25rem;
+    border-radius: 1rem;
+    background-color: var(--color-marine-blue);
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0.2rem;
+      transform: translateY(-50%);
+      background-color: var(--color-white);
+      height: 0.6rem;
+      width: 0.6rem;
+      border-radius: 100%;
+      transition: all 0.2s;
+    }
+  }
+
+  &__check {
+    display: none;
+  }
+
+  &__check:checked ~ &__label::after {
+    left: unset;
+    left: 1.45rem;
+  }
+
+  &__check:checked ~ &__name--monthly {
+    color: var(--color-cool-gray);
+  }
+  &__check:checked ~ &__name--yearly {
+    color: var(--color-marine-blue);
+  }
+}
