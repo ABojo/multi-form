@@ -24,6 +24,9 @@ function formReducer(state: FormState, action: FormAction): FormState {
     case "SET_PHONE_NUMBER_INVALID":
       newState.phoneNumber = { ...newState.phoneNumber, isValid: false };
       return newState;
+    case "SET_PLAN":
+      newState.plan = { ...action.payload };
+      return newState;
   }
 }
 
