@@ -27,6 +27,9 @@ function formReducer(state: FormState, action: FormAction): FormState {
     case "SET_PLAN":
       newState.plan = { ...action.payload };
       return newState;
+    case "SET_PLAN_DURATION":
+      newState.planDuration = action.payload;
+      return newState;
   }
 }
 
