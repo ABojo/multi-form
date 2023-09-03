@@ -5,7 +5,7 @@ interface StepViewProps {
 }
 
 function StepView({ currentStep }: StepViewProps): JSX.Element {
-  const steps: string[] = ["Your Plan", "Select Plan", "Add-Ons", "Summary"];
+  const steps: string[] = ["Your Info", "Select Plan", "Add-Ons", "Summary"];
 
   return (
     <div className={styles.steps}>
