@@ -54,4 +54,62 @@ button {
   max-width: 59rem;
   padding: 1rem;
   margin-top: 6.5rem;
+  display: flex;
+  gap: 6rem;
+}
+
+.section {
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+
+  &__heading {
+    color: var(--color-marine-blue);
+    margin-bottom: 0.75rem;
+    font-size: var(--fs-4);
+  }
+
+  &__description {
+    font-size: var(--fs-3);
+    color: var(--color-cool-gray);
+  }
+
+  &__foot {
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+  }
+
+  &__back {
+    background-color: transparent;
+    font-size: var(--fs-3);
+    font-weight: var(--fw-2);
+    color: var(--color-cool-gray);
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-marine-blue);
+    }
+  }
+
+  &__next {
+    color: var(--color-white);
+    background-color: var(--color-marine-blue);
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: var(--fw-3);
+    font-size: var(--fs-3);
+    margin-left: auto;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--color-purple-blue);
+      cursor: pointer;
+    }
+  }
 }
