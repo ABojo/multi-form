@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import StepView from "./components/StepView/StepView";
+import PersonalSection from "./components/PersonalSection/PersonalSection";
+import PlanSection from "./components/PlanSection/PlanSection";
+import AddOnSection from "./components/AddOnSection/AddOnSection";
+import SummarySection from "./components/SummarySection/SummarySection";
+import SubmittedSection from "./components/SubmittedSection/SubmittedSection";
+import formReducer from "./reducers/formReducer";
+import defaultFormState from "./utils/defaultFormState";
 
 function App() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
-
-  const stepComponents = [<div>Personal Info</div>, <div>Plans</div>, <div>Add Ons</div>, <div>Summary</div>];
+  const [formState, formDispatch] = useReducer(formReducer, defaultFormState);
 
   function incrementStepIndex() {
     setStepIndex((prevIndex) => {
@@ -30,9 +37,50 @@ function App() {
     });
   }
 
+  function goToPlanPage() {
+    setStepIndex(1);
+  }
+
+  function markFormSubmitted() {
+    setIsSubmitted(true);
+  }
+
+  const stepComponents = [
+    <PersonalSection
+      nameField={formState.name}
+      emailField={formState.email}
+      phoneField={formState.phoneNumber}
+      incrementStep={incrementStepIndex}
+      formDispatch={formDispatch}
+    />,
+    <PlanSection
+      currentPlan={formState.plan}
+      currentPlanDuration={formState.planDuration}
+      incrementStep={incrementStepIndex}
+      decrementStep={decrementStepIndex}
+      formDispatch={formDispatch}
+    />,
+    <AddOnSection
+      incrementStep={incrementStepIndex}
+      decrementStep={decrementStepIndex}
+      formDispatch={formDispatch}
+      currentPlanDuration={formState.planDuration}
+      savedAddOns={formState.addOns}
+    />,
+    <SummarySection
+      decrementStep={decrementStepIndex}
+      goToPlanPage={goToPlanPage}
+      markFormSubmitted={markFormSubmitted}
+      plan={formState.plan}
+      planDuration={formState.planDuration}
+      addOns={formState.addOns}
+    />,
+  ];
+
   return (
     <main className="container">
       <StepView currentStep={stepIndex} />
+      <form onSubmit={(e) => e.preventDefault()}>{isSubmitted ? <SubmittedSection /> : stepComponents[stepIndex]}</form>
     </main>
   );
 }
