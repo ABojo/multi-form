@@ -1,16 +1,23 @@
+@use "../../sass/breakpoints" as *;
+
 .plans {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   width: 100%;
   margin-top: 2.75rem;
+
+  @media (max-width: $bp-2) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: $bp-5) {
+    margin-top: 1.5rem;
+  }
 }
 
 .card {
   width: 100%;
-
-  &--active {
-  }
 
   &__label {
     cursor: pointer;
@@ -21,6 +28,11 @@
     border: 1px solid var(--color-light-gray);
     border-radius: 0.5rem;
     transition: all 0.2s;
+
+    @media (max-width: $bp-2) {
+      display: flex;
+      align-items: start;
+    }
   }
 
   &__radio:checked + &__label {
@@ -34,6 +46,11 @@
 
   &__img {
     margin-bottom: 2.5rem;
+
+    @media (max-width: $bp-2) {
+      margin-bottom: unset;
+      margin-right: 1rem;
+    }
   }
 
   &__title {
@@ -67,6 +84,14 @@
   justify-content: center;
   border-radius: 0.5rem;
   gap: 1.5rem;
+
+  @media (max-width: $bp-2) {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: $bp-5) {
+    margin-bottom: 0;
+  }
 
   &__name {
     &--monthly {

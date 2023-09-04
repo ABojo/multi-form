@@ -52,12 +52,14 @@ function PlanSection({
               />
               <label className={styles.card__label} htmlFor={id}>
                 <img className={styles.card__img} src={iconUrl} alt={name} />
-                <p className={styles.card__title}>{name}</p>
-                <span className={styles.card__price}>
-                  ${prices[currentPlanDuration]}/
-                  <span className={styles.card__term}>{durationIsYearly() ? "yr" : "mo"}</span>
-                </span>
-                {durationIsYearly() && <span className={styles.card__promotion}>2 months free</span>}
+                <div>
+                  <p className={styles.card__title}>{name}</p>
+                  <span className={styles.card__price}>
+                    ${prices[currentPlanDuration]}/
+                    <span className={styles.card__term}>{durationIsYearly() ? "yr" : "mo"}</span>
+                  </span>
+                  {durationIsYearly() && <span className={styles.card__promotion}>2 months free</span>}
+                </div>
               </label>
             </div>
           );

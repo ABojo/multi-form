@@ -1,6 +1,12 @@
+@use "../../sass/breakpoints" as *;
+
 .summary {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2.75rem;
+
+  @media (max-width: $bp-5) {
+    margin-top: 1.5rem;
+  }
 
   &__container {
     background-color: var(--color-magnolia);
@@ -72,6 +78,7 @@
   margin-top: 2.5rem;
   padding: 0 1.5rem;
   justify-content: space-between;
+  align-items: center;
 
   &__title {
     font-size: var(--fs-2);
