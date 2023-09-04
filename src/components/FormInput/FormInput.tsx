@@ -22,6 +22,7 @@ function FormInput({ labelText, id, placeholder, formField, errorMessage, onChan
         <span className={styles.input__error}>{errorMessage}</span>
       </div>
       <input
+        id={id}
         onChange={onChangeHandler}
         className={styles.input__input}
         type="text"
