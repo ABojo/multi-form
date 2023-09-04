@@ -1,3 +1,4 @@
+import AddOn from "./AddOn";
 import FormField from "./FormField";
 import Plan from "./Plan";
 import PlanDuration from "./PlanDuration";
@@ -21,6 +22,11 @@ interface PlanDurationAction {
   payload: PlanDuration;
 }
 
-type FormAction = SetAction | InvalidateAction | PlanAction | PlanDurationAction;
+interface AddOnAction {
+  type: "SET_ADD_ONS";
+  payload: AddOn[];
+}
+
+type FormAction = SetAction | InvalidateAction | PlanAction | PlanDurationAction | AddOnAction;
 
 export default FormAction;
