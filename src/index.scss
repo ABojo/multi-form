@@ -53,9 +53,14 @@ button {
   width: 90%;
   max-width: 59rem;
   padding: 1rem;
+  padding-right: 6.5rem;
   margin-top: 6.5rem;
   display: flex;
   gap: 6rem;
+}
+
+form {
+  flex: 1;
 }
 
 .section {
@@ -96,7 +101,8 @@ button {
     }
   }
 
-  &__next {
+  &__next,
+  &__confirm {
     color: var(--color-white);
     background-color: var(--color-marine-blue);
     border: none;
@@ -110,6 +116,14 @@ button {
     &:hover {
       background-color: var(--color-purple-blue);
       cursor: pointer;
+    }
+  }
+
+  &__confirm {
+    background-color: var(--color-purple-blue);
+
+    &:hover {
+      opacity: 0.75;
     }
   }
 }
