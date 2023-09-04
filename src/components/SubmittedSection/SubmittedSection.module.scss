@@ -1,0 +1,23 @@
+.submitted {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__icon {
+    margin-bottom: 2.5rem;
+    margin-top: 10rem;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+    color: var(--color-marine-blue);
+  }
+
+  &__paragraph {
+    text-align: center;
+    color: var(--color-cool-gray);
+    font-size: var(--fs-3);
+    line-height: 1.5625rem;
+  }
+}
