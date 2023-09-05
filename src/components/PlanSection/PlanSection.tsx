@@ -38,7 +38,6 @@ function PlanSection({
             <div
               key={id}
               className={styles.card}
-              tabIndex={0}
               onClick={() => {
                 formDispatch({ type: "SET_PLAN", payload: plan });
               }}
@@ -81,10 +80,10 @@ function PlanSection({
         <span className={`${styles.duration__name} ${styles["duration__name--yearly"]}`}>Yearly</span>
       </div>
       <div className="section__foot">
-        <button className="section__back" onClick={decrementStep}>
+        <button type="button" className="section__back" onClick={decrementStep}>
           Go Back
         </button>
-        <button className="section__next" onClick={incrementStep}>
+        <button type="submit" className="section__next" onClick={incrementStep}>
           Next Step
         </button>
       </div>
