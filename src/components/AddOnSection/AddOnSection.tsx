@@ -68,10 +68,10 @@ function AddOnSection({ incrementStep, decrementStep, formDispatch, currentPlanD
         })}
       </div>
       <div className="section__foot">
-        <button onClick={decrementStep} className="section__back">
+        <button type="button" onClick={decrementStep} className="section__back">
           Go Back
         </button>
-        <button onClick={incrementStep} className="section__next">
+        <button type="submit" onClick={incrementStep} className="section__next">
           Next Step
         </button>
       </div>
