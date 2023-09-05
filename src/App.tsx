@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 import StepView from "./components/StepView/StepView";
 import PersonalSection from "./components/PersonalSection/PersonalSection";
 import PlanSection from "./components/PlanSection/PlanSection";
@@ -7,11 +7,20 @@ import SummarySection from "./components/SummarySection/SummarySection";
 import SubmittedSection from "./components/SubmittedSection/SubmittedSection";
 import formReducer from "./reducers/formReducer";
 import defaultFormState from "./utils/defaultFormState";
+import imageList from "./utils/imageList";
 
 function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
   const [formState, formDispatch] = useReducer(formReducer, defaultFormState);
+
+  //caches images used in form
+  useEffect(() => {
+    imageList.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
 
   function incrementStepIndex() {
     setStepIndex((prevIndex) => {
