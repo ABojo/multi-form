@@ -1,27 +1,21 @@
-# React + TypeScript + Vite
+# Multi Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a [FrontEndMentor](https://www.frontendmentor.io) challenge. They provided the design, assets, colors, and fonts. The implementation was entirely up to me.
 
-Currently, two official plugins are available:
+It is a multi-step checkout form built with React and SCSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Links
 
-## Expanding the ESLint configuration
+- You can click [here](https://abojo-form.netlify.app/) to test the app.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- You can click [here](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ) to see the design it was based on.
 
-- Configure the top-level `parserOptions` property like this:
+## Images
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Desktop
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![Desktop Design](https://i.imgur.com/gOeOQW8.png)
+
+### Mobile
+
+![Mobile Design](https://i.imgur.com/NbBSTY5.png)
